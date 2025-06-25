@@ -17,6 +17,16 @@
   <servlet>
   	<servlet-name>helloServlet</servlet-name>
   	<servlet-class>com.hello.controller.HelloController</servlet-class>
+  
+  	<!-- init()메서드가 생성될 때 값 사용하며 서블릿 객체 생성시 초기화에 활용 -->
+  	<init-param>
+  		<param-name>id</param-name>
+  		<param-value>ADMIN</param-value>
+  	</init-param>
+  	
+  	<load-on-startup>1</load-on-startup>
+  	<!-- 서버가 스타트되면서 서블릿 객체가 만들어진다. -->
+  	<!-- 기본은 첫 요청시 서블릿 객체가 만들어지지만, 해당 설정을 통해 서버 start 시 서블릿 생성 -->
   </servlet>
   <servlet-mapping>
   	<servlet-name>helloServlet</servlet-name>
@@ -28,6 +38,7 @@
   <servlet>
   	<servlet-name>byeServlet</servlet-name>
   	<servlet-class>com.bye.controller.ByeController</servlet-class>
+  	<load-on-startup>5</load-on-startup>
   </servlet>
   <servlet-mapping>
   	<servlet-name>byeServlet</servlet-name>
